@@ -151,20 +151,30 @@ int main(){
         informacion[2] =  mitad+1;       
     }
 
+    int conteo = 0;
+
     //inicializo las variables para tomar los tiempos
     double time_spend = 0.0;
-    clock_t begin = clock();
-
-    //Creo los hilos y los ejecuto con sus rutinas
-    pthread_create(&proceso1, NULL, &Procesomultiplicar, informacion);
-    pthread_create(&proceso2, NULL, &Procesomultiplicar2, informacion);
-    pthread_join(proceso1, NULL);
-    pthread_join(proceso2, NULL);
     
-    clock_t end = clock();
-    time_spend += (double)(end-begin) / CLOCKS_PER_SEC;
-    //el tiempo está en milisegundos entonces divido ente 1000 para que sean segundos
-    cout<<endl<<"Tiempo en hacer la multiplicacion con hilos: "<<time_spend/2.0<<" s"<<endl;
+
+    while (conteo < 10)
+    {
+        time_spend = 0.0;
+        clock_t begin = clock();
+        //Creo los hilos y los ejecuto con sus rutinas
+        pthread_create(&proceso1, NULL, &Procesomultiplicar, informacion);
+        pthread_create(&proceso2, NULL, &Procesomultiplicar2, informacion);
+        pthread_join(proceso1, NULL);
+        pthread_join(proceso2, NULL);
+
+
+        clock_t end = clock();
+        time_spend += (double)(end-begin) / CLOCKS_PER_SEC;
+        //el tiempo está en milisegundos entonces divido ente 1000 para que sean segundos
+        cout<<endl<<"Tiempo en hacer la multiplicacion con hilos: "<<time_spend/2.0<<" s"<<endl;
+        conteo += 1;
+    }
+      
 
     return 0;
 }
