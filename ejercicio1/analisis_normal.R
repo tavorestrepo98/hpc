@@ -22,8 +22,14 @@ datos_400 <- c(64.5084, 65.1833, 64.3154, 64.7881, 64.3391, 64.7319, 64.9618, 64
 mean(datos_400)
 sd(datos_400)
 
-tiempos_medios <- c(mean(datos_10), mean(datos_50), mean(datos_100), mean(datos_200), mean(datos_300))
-datos_matrices <- c(10, 50, 100, 200, 300)
+datos_500 <- c(145.721, 146.065, 146.353, 145.344, 145.701, 145.42, 145.614, 145.447, 145.762, 145.696)
+length(datos_500)
+mean(datos_500)
+sd(datos_500)
 
+tiempos_medios <- c(mean(datos_10), mean(datos_50), mean(datos_100), mean(datos_200), mean(datos_300), mean(datos_400), mean(datos_500))
+datos_matrices <- c(10, 50, 100, 200, 300, 400, 500)
 
-plot(datos_matrices, tiempos_medios, ylab = "Tiempo", xlab = "Tamaño matriz", main = "Programa Sin Hilos", type = "o")
+dev.off()
+
+plot(datos_matrices, tiempos_medios, ylab = "Tiempo (s)", xlab = "Tamaño matriz", main = "Programa Sin Hilos", type = "o")
