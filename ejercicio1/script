@@ -1,0 +1,7 @@
+#! /bin/bash
+for j in {1..10}; do
+for i in 10 50 100 200 300 400 500 
+do
+./matrix $i >> out$i
+done;
+done;

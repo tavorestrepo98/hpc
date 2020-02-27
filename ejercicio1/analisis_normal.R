@@ -27,8 +27,13 @@ length(datos_500)
 mean(datos_500)
 sd(datos_500)
 
-tiempos_medios <- c(mean(datos_10), mean(datos_50), mean(datos_100), mean(datos_200), mean(datos_300), mean(datos_400), mean(datos_500))
-datos_matrices <- c(10, 50, 100, 200, 300, 400, 500)
+tiempo_s <- c(mean(datos_10), mean(datos_50), mean(datos_100), mean(datos_200), mean(datos_300), mean(datos_400), mean(datos_500))
+tamaño_s<- c(10, 50, 100, 200, 300, 400, 500)
+
+mult_mat <- data.frame(tamaño_s, tiempo_s)
+head(mult_mat, 7)
+tiempo_s
+
 
 dev.off()
 

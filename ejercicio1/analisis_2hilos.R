@@ -18,9 +18,11 @@ datos_400hilos <- c(26.2595, 26.1735, 26.2713, 26.2415, 26.2202, 26.3778, 26.341
 
 datos_500hilos <- c(56.7133, 56.063, 56.0375, 56.2211, 56.1372, 56.1978, 56.1465, 56.1755, 56.2399, 56.1686)
 
-tiempos_medios_hilos <- c(mean(datos_10hilos), mean(datos_50hilos), mean(datos_100hilos), mean(datos_200hilos), mean(datos_300hilos), mean(datos_400hilos), mean(datos_500hilos))
-datos_matrices_hilos <- c(10, 50, 100, 200, 300, 400, 500)
+tiempo <- c(mean(datos_10hilos), mean(datos_50hilos), mean(datos_100hilos), mean(datos_200hilos), mean(datos_300hilos), mean(datos_400hilos), mean(datos_500hilos))
+tamaño <- c(10, 50, 100, 200, 300, 400, 500)
 
+data_2hilos <- data.frame(tamaño, tiempo)
+head(data_2hilos, 7)
 
 dev.off()
 
